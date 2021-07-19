@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <a href="/administration/element/create"><button>create element</button></a>
+        <a href="/administration/element/vegetable/create"><button>create element</button></a>
         <h1>Vegetable List</h1>
         <div>
             <table class="table">
@@ -15,15 +15,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($vegetables as $vegetable)
-                        <tr>
+                    @forelse ($vegetables as $vegetable)
+                        <tr  class="{{ strlen($vegetable->name) > 5 ? 'bg-primary' : 'bg-none' }}">
                             <td>{{ $vegetable->id }}</td>
-                            <td class="{{ strlen($vegetable->name) > 5 ? 'bg-primary' : 'bg-none' }}">{{ $vegetable->name }}
+                            <td>
+                                {{ $vegetable->name }}
                             </td>
                             <td>{{ $vegetable->quantite }}</td>
-                            <td><a href="/administration/element/{{$vegetable->id}}/show">show</a></td>
+                            <td><a href="/administration/element/vegetable/{{ $vegetable->id }}/show"><button>show</button></a></td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <p class="bg-danger text-white p-1">no product</p>
+                    @endforelse
                 </tbody>
             </table>
         </div>

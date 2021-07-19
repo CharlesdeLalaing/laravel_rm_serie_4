@@ -25,16 +25,21 @@ Route::get('/administration/fruitAdmin', [FruitAdminController::class,'fruit'])-
 Route::get('/administration/vegetableAdmin', [VegetableAdminController::class,'vegetable'])->name('vagetableAdmin');
 
 //B-O CREATE ELEMENT
-Route::get('/administration/element/create', [VegetableAdminController::class,'create']);
-Route::get('/administration/element/create', [FruitAdminController::class,'create']);
+Route::get('/administration/element/fruit/create', [FruitAdminController::class,'create']);
+Route::get('/administration/element/vegetable/create', [VegetableAdminController::class,'create']);
 
 //B-O STORE
-Route::post('/administration/element/create', [FruitAdminController::class,'store']);
-Route::post('/administration/element/create', [VegetableAdminController::class,'store']);
+Route::post('/administration/element/fruit/create', [FruitAdminController::class,'store']);
+Route::post('/administration/element/vegetable/create', [VegetableAdminController::class,'store']);
 
 //B-O SHOW
-Route::get('administration/element/{id}/show', [FruitAdminController::class,'show']);
-Route::get('administration/element/{id}/show', [VegetableAdminController::class,'show']);
+Route::get('administration/element/fruit/{id}/show', [FruitAdminController::class,'show']);
+Route::get('administration/element/vegetable/{id}/show', [VegetableAdminController::class,'show']);
+
+//B-O DELETE
+Route::delete('/administration/element/fruit/{id}/delete', [FruitAdminController::class, 'destroy']);
+Route::delete('/administration/element/vegetable/{id}/delete', [VegetableAdminController::class, 'destroy']);
+
 
 
 //CREATE

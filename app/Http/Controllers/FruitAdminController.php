@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Fruit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FruitAdminController extends Controller
 {
@@ -14,7 +15,7 @@ class FruitAdminController extends Controller
     }
     public function create()
     {
-        return view('back-office.pages.createElement');
+        return view('back-office.pages.createFruit');
     }
     public function store(Request $request)
     {
@@ -27,6 +28,11 @@ class FruitAdminController extends Controller
     public function show($id)
     {
         $show = Fruit::find($id);
-        return view('back-office.pages.showElement', compact('show'));
+        return view('back-office.pages.showFruit', compact('show'));
+    }
+    public function destroy($id){
+        $destroy = Fruit::find($id);
+        $destroy->delete();
+        return redirect('/administration/fruitAdmin');
     }
 }

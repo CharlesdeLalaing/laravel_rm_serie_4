@@ -13,7 +13,7 @@ class VegetableAdminController extends Controller
     }
     public function create()
     {
-        return view('back-office.pages.createElement');
+        return view('back-office.pages.createVegetable');
     }
     public function store (Request $request){
         $store = new Vegetable;
@@ -25,6 +25,11 @@ class VegetableAdminController extends Controller
     public function show($id)
     {
         $show = Vegetable::find($id);
-        return view('back-office.pages.showElement', compact('show'));
+        return view('back-office.pages.showVegetable', compact('show'));
+    }
+    public function destroy($id){
+        $destroy = Vegetable::find($id);
+        $destroy->delete();
+        return redirect('/administration/vegetableAdmin');
     }
 }

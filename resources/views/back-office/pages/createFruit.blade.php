@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form action="/administration/element/create" method="POST">
+        <form action="/administration/element/fruit/create" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Nom</label>
