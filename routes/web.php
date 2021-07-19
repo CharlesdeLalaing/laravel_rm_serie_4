@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FruitController;
+use App\Http\Controllers\VegetableController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/fruit', [FruitController::class,'index'])->name('fruit');
+Route::get('/vegetable', [VegetableController::class,'index'])->name('vegetable');
+
+//CREATE
+Route::get('/fruit/create', [FruitController::class,'create']);
+Route::get('/vegetable/create', [VegetableController::class,'create']);
+
+//STORE
+Route::post('/fruit/store', [FruitController::class,'store']);
+Route::post('/vegetable/store', [VegetableController::class,'store']);
