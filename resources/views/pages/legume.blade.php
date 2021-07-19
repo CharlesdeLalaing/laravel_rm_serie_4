@@ -3,14 +3,25 @@
 @section('content')
     <div class="container">
         <a href="/vegetable/create"><button>create vegetable</button></a>
-        @foreach ($vegetables as $vegetable)
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Type : {{ $vegetable->name }}</div>
-                <div class="card-body">
-                    <h5 class="card-title">Quantite : {{ $vegetable->quantite }}</h5>
-                    <p class="card-text">ID de carte : {{ $vegetable->id }}</p>
-                </div>
-            </div>
-        @endforeach
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Quantité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($vegetables as $vegetable)
+                        <tr>
+                            <td>{{ $vegetable->id }}</td>
+                            <td class="{{ strlen($vegetable->name) > 5  ? 'bg-primary' : 'bg-none' }}">{{ $vegetable->name }}</td>
+                            <td>{{ $vegetable->quantite }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 @endsection

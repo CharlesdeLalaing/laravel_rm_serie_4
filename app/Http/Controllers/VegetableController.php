@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class VegetableController extends Controller
 {
     public function index(){
-        $vegetables = Vegetable::all();
+        $vegetables = Vegetable::orderBy('name', 'asc')->get();
         return view('pages.legume', compact('vegetables'));
     }
     public function create(){

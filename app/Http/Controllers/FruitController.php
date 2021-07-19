@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class FruitController extends Controller
 {
     public function index(){
-        $fruits = Fruit::all();
+        $fruits = Fruit::orderBy('name', 'asc')->get();
         return view('pages.fruit', compact('fruits'));
     }
     public function create(){
