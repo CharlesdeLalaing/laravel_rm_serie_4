@@ -21,4 +21,8 @@ class VegetableController extends Controller
         $store->save();
         return redirect ('/vegetable');
     }
+    public function show($id){
+        $show = Vegetable::find($id);
+        return view('pages.show.showVegetable', compact('show'));
+    }
 }

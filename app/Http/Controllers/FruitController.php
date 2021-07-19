@@ -21,4 +21,8 @@ class FruitController extends Controller
         $store->save();
         return redirect ('/fruit');
     }
+    public function show($id){
+        $show = Fruit::find($id);
+        return view('pages.show.showFruit', compact('show'));
+    }
 }

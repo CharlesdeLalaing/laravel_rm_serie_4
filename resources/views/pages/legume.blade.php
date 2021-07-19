@@ -10,6 +10,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Nom</th>
                         <th scope="col">Quantité</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,6 +19,7 @@
                             <td>{{ $vegetable->id }}</td>
                             <td class="{{ strlen($vegetable->name) > 5  ? 'bg-primary' : 'bg-none' }}">{{ $vegetable->name }}</td>
                             <td>{{ $vegetable->quantite }}</td>
+                            <td><a href="/vegetable/{{$vegetable->id}}/show">show</a></td>
                         </tr>
                     @endforeach
                 </tbody>

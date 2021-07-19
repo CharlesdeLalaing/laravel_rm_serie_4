@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FruitController;
 use App\Http\Controllers\VegetableController;
+use App\Models\Vegetable;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,8 @@ Route::get('/vegetable/create', [VegetableController::class,'create']);
 //STORE
 Route::post('/fruit/store', [FruitController::class,'store']);
 Route::post('/vegetable/store', [VegetableController::class,'store']);
+
+//SHOW
+Route::get('/fruit/{id}/show', [FruitController::class,'show']);
+Route::get('/vegetable/{id}/show', [VegetableController::class,'show']);
+
