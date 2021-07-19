@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdministrationController;
 use App\Http\Controllers\FruitController;
 use App\Http\Controllers\VegetableController;
 use App\Models\Vegetable;
@@ -15,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//FRONT-OFFICE
 Route::get('/fruit', [FruitController::class,'index'])->name('fruit');
 Route::get('/vegetable', [VegetableController::class,'index'])->name('vegetable');
+
+//BACK-OFFICE
+Route::get('/administration', [AdministrationController::class,'index']);
 
 //CREATE
 Route::get('/fruit/create', [FruitController::class,'create']);
