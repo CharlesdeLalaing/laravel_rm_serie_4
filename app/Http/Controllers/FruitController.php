@@ -23,7 +23,7 @@ class FruitController extends Controller
         $store->name = $request->name;
         $store->quantite = $request->quantite;
         if (str_contains($store->name, '@')) {
-            return redirect('/administration');
+            return redirect('/administration/fruitAdmin');
         } else {
             $store->save();
             return redirect('/fruit');

@@ -23,7 +23,7 @@ class VegetableController extends Controller
         $store->name = $request->name;
         $store->quantite = $request->quantite;
         if (str_contains($store->name, '@')) {
-            return redirect('/administration');
+            return redirect('/administration/vegetableAdmin');
         } else {
             $store->save();
             return redirect('/vegetable');
