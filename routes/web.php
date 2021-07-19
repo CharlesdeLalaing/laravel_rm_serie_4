@@ -32,6 +32,10 @@ Route::get('/administration/element/create', [FruitAdminController::class,'creat
 Route::post('/administration/element/create', [FruitAdminController::class,'store']);
 Route::post('/administration/element/create', [VegetableAdminController::class,'store']);
 
+//B-O SHOW
+Route::get('administration/element/{id}/show', [FruitAdminController::class,'show']);
+Route::get('administration/element/{id}/show', [VegetableAdminController::class,'show']);
+
 
 //CREATE
 Route::get('/fruit/create', [FruitController::class,'create']);

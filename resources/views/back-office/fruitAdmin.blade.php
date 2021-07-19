@@ -11,6 +11,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Nom</th>
                         <th scope="col">Quantité</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,6 +21,7 @@
                             <td class="{{ strlen($fruit->name) > 5 ? 'bg-primary' : 'bg-none' }}">{{ $fruit->name }}
                             </td>
                             <td>{{ $fruit->quantite }}</td>
+                            <td><a href="/administration/element/{{$fruit->id}}/show">show</a></td>
                         </tr>
                     @endforeach
                 </tbody>

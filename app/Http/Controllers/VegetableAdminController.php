@@ -22,4 +22,9 @@ class VegetableAdminController extends Controller
         $store->save();
         return redirect('/administration/vegetableAdmin');
     }
+    public function show($id)
+    {
+        $show = Vegetable::find($id);
+        return view('back-office.pages.showElement', compact('show'));
+    }
 }
