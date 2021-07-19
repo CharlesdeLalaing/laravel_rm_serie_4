@@ -27,6 +27,17 @@ class VegetableAdminController extends Controller
         $show = Vegetable::find($id);
         return view('back-office.pages.showVegetable', compact('show'));
     }
+    public function edit($id){
+        $edit = Vegetable::find($id);
+        return view('back-office.pages.editVegetable',compact('edit'));
+    }
+    public function update($id, Request $request){
+        $update = Vegetable::find($id);
+        $update->name = $request->name;
+        $update->quantite = $request->quantite;
+        $update->save();
+        return redirect('/administration/vegetableAdmin');
+    }
     public function destroy($id){
         $destroy = Vegetable::find($id);
         $destroy->delete();

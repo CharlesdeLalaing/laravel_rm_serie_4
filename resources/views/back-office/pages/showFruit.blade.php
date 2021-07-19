@@ -7,6 +7,7 @@
                 <h5 class="card-title">NOM: {{$show->name}}</h5>
                 <p class="card-text">QUANTITE: {{$show->quantite}}</p>
                 <a href="{{ URL::previous() }}" class="btn btn-primary">Back to List</a>
+                <a class="btn btn-success text-white mb-3" href="/administration/element/fruit/{{$show->id}}/edit">EDIT</a>
                 <form action="/administration/element/fruit/{{$show->id}}/delete" method="POST">
                     @csrf
                     @method('DELETE')

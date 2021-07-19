@@ -30,6 +30,17 @@ class FruitAdminController extends Controller
         $show = Fruit::find($id);
         return view('back-office.pages.showFruit', compact('show'));
     }
+    public function edit($id){
+        $edit = Fruit::find($id);
+        return view('back-office.pages.editFruit',compact('edit'));
+    }
+    public function update($id, Request $request){
+        $update = Fruit::find($id);
+        $update->name = $request->name;
+        $update->quantite = $request->quantite;
+        $update->save();
+        return redirect('/administration/fruitAdmin');
+    }
     public function destroy($id){
         $destroy = Fruit::find($id);
         $destroy->delete();

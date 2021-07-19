@@ -36,9 +36,20 @@ Route::post('/administration/element/vegetable/create', [VegetableAdminControlle
 Route::get('administration/element/fruit/{id}/show', [FruitAdminController::class,'show']);
 Route::get('administration/element/vegetable/{id}/show', [VegetableAdminController::class,'show']);
 
+//B-O EDIT
+Route::get('administration/element/fruit/{id}/edit', [FruitAdminController::class, 'edit']);
+Route::get('administration/element/vegetable/{id}/edit', [VegetableAdminController::class, 'edit']);
+
+
+//B-O UPDATE
+Route::put('/administration/element/vegetable/{id}/update', [VegetableAdminController::class, 'update']);
+Route::put('/administration/element/fruit/{id}/update', [FruitAdminController::class, 'update']);
+
 //B-O DELETE
 Route::delete('/administration/element/fruit/{id}/delete', [FruitAdminController::class, 'destroy']);
 Route::delete('/administration/element/vegetable/{id}/delete', [VegetableAdminController::class, 'destroy']);
+
+
 
 
 
